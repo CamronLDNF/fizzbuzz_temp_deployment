@@ -4,7 +4,7 @@ describe('Fizz Buzz', () => {
     let fizzBuzz = new FizzBuzz
 
     it('returns a number if no game rules are met', () => {
-        expect(fizzBuzz.check(1)).to.eql(1)
+        expect(fizzBuzz.check(1)).to.eql('Hey come on, be serious, give me a better number!')
     })
 
     it('returns Fizz if number is divisible by 3', () => {
@@ -17,6 +17,18 @@ describe('Fizz Buzz', () => {
 
     it('returns FizzBuzz if number is divisible by 15', () => {
         expect(fizzBuzz.check(15)).to.eql('FizzBuzz')
+    })
+
+    it('returns error message if not a number', () => {
+        expect(fizzBuzz.check('test')).to.eql('Give me a number! I want one now!')
+    })
+
+    it('returns error message if number is equal less than 0', () => {
+        expect(fizzBuzz.check(-1)).to.eql('Give me a number of 1 or larger! Now!')
+    })
+
+    it('returns error message if number is equal to 0', () => {
+        expect(fizzBuzz.check(0)).to.eql('Give me a number of 1 or larger! Now!')
     })
 
 })
