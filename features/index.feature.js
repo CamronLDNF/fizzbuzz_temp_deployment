@@ -22,4 +22,26 @@ describe('User can input a value and get FizzBuzz results', () => {
         let content = await browser.getContent("[id='display_answer']")
         expect(content).to.eql('Fizz');
     })
+
+    it('clicking on the "Check" button', async () => {
+        await browser.fillIn("input[id='value']", { with:  "5" })
+        await browser.clickOnButton("input[value='Check']")
+        let content = await browser.getContent("[id='display_answer']")
+        expect(content).to.eql('Buzz');
+    })
+
+    it('clicking on the "Check" button', async () => {
+        await browser.fillIn("input[id='value']", { with:  "15" })
+        await browser.clickOnButton("input[value='Check']")
+        let content = await browser.getContent("[id='display_answer']")
+        expect(content).to.eql('FizzBuzz');
+    })
+
+    it('clicking on the "Check" button', async () => {
+        await browser.fillIn("input[id='value']", { with:  "test" })
+        await browser.clickOnButton("input[value='Check']")
+        let content = await browser.getContent("[id='display_answer']")
+        expect(content).to.eql('Give me a number! I want one now!');
+    })
+
 })

@@ -1,6 +1,9 @@
 function FizzBuzz()  {
     this.check = (number) => {
-        if (number === 0) {
+        if (!number) {
+            return 'Give me a number! I want one now!';
+        } else if 
+        (number === 0) {
             return 'Give me a number of 1 or larger! Now!';
         } else if (number < 0) {
             return 'Give me a number of 1 or larger! Now!';
